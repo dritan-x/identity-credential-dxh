@@ -254,6 +254,8 @@ class PresentationActivity : ComponentActivity() {
      * Get device request.
      */
     private fun getDeviceRequest(): ByteArray {
+        // adding new string
+        val featureB = "featureB"
         check(state.value == State.REQUEST_AVAILABLE) { "Not in REQUEST_AVAILABLE state"}
         check(deviceRequest != null) { "No request available "}
         return deviceRequest as ByteArray
@@ -263,6 +265,8 @@ class PresentationActivity : ComponentActivity() {
      * Send response
      */
     private fun sendResponse(deviceResponseBytes: ByteArray) {
+        // adding new string
+        val featureB = "featureB"
         check(state.value == State.REQUEST_AVAILABLE) { "Not in REQUEST_AVAILABLE state"}
         deviceRetrievalHelper!!.sendDeviceResponse(deviceResponseBytes, OptionalLong.of(Constants.SESSION_DATA_STATUS_SESSION_TERMINATION))
         state.value = State.RESPONSE_SENT
@@ -272,6 +276,8 @@ class PresentationActivity : ComponentActivity() {
      * Feature A adds comments to all functions.
      */
     private fun processRequest() {
+        // adding new string
+        val featureB = "featureB"
         // TODO support more formats
         val credentialPresentationFormat: CredentialPresentationFormat = CredentialPresentationFormat.MDOC_MSO
 

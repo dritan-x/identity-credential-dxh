@@ -262,7 +262,11 @@ class PresentationActivity : ComponentActivity() {
         state.value = State.RESPONSE_SENT
     }
 
+    /**
+     * Process Request PR
+     */
     private fun processRequest() {
+        val ok = "OK"
         // TODO support more formats
         val credentialPresentationFormat: CredentialPresentationFormat = CredentialPresentationFormat.MDOC_MSO
 

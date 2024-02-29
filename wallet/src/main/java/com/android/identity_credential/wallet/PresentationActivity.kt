@@ -250,18 +250,27 @@ class PresentationActivity : ComponentActivity() {
         this.onDestroy()
     }
 
+    /**
+     * Get device request.
+     */
     private fun getDeviceRequest(): ByteArray {
         check(state.value == State.REQUEST_AVAILABLE) { "Not in REQUEST_AVAILABLE state"}
         check(deviceRequest != null) { "No request available "}
         return deviceRequest as ByteArray
     }
 
+    /**
+     * Send response
+     */
     private fun sendResponse(deviceResponseBytes: ByteArray) {
         check(state.value == State.REQUEST_AVAILABLE) { "Not in REQUEST_AVAILABLE state"}
         deviceRetrievalHelper!!.sendDeviceResponse(deviceResponseBytes, OptionalLong.of(Constants.SESSION_DATA_STATUS_SESSION_TERMINATION))
         state.value = State.RESPONSE_SENT
     }
 
+    /**
+     * Feature A adds comments to all functions.
+     */
     private fun processRequest() {
         // TODO support more formats
         val credentialPresentationFormat: CredentialPresentationFormat = CredentialPresentationFormat.MDOC_MSO

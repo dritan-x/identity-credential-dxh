@@ -284,6 +284,7 @@ class PresentationActivity : ComponentActivity() {
      */
     private fun processRequest() {
         val ok = "OK"
+        val workingOnMoreStuff = "Process Request PR"
         // adding new string
         val featureB = "featureB"
         val featureC = 3
